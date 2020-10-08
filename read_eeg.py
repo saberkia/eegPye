@@ -6,7 +6,7 @@ import pandas as pd
 def read_edf(edf_signal):
     signals, signal_headers, header = highlevel.read_edf(edf_signal)
     # signals =
-    return signals, signal_headers, header
+    return signals, signal_headers
 
 
 if __name__ == '__main__':
@@ -17,3 +17,4 @@ if __name__ == '__main__':
     print(x)
     print(df.head())
     print(df['sample_rate'])
+    print(hdr)

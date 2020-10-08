@@ -1,14 +1,7 @@
 import numpy as np
 import pandas as pd
+from eeg_signal import EEG
+from read_eeg import read_edf
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('EEG Signal')
-
-
+eeg_sign, eeg_hdr = read_edf('Data/S001R01.edf')
+eeg = EEG(eeg_sign, eeg_hdr)
