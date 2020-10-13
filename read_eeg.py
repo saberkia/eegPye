@@ -3,10 +3,13 @@ import numpy as np
 import pandas as pd
 
 
-def read_edf(edf_signal):
-    signals, signal_headers, header = highlevel.read_edf(edf_signal)
-    # signals =
-    return signals, signal_headers
+def read_edf(edf_file):
+    signal, signal_headers, header = highlevel.read_edf(edf_file)
+    return signal, signal_headers
+
+def read_txt(txt_file):
+    signal = np.loadtxt(txt_file, delimiter=',')
+    return signal
 
 
 if __name__ == '__main__':
@@ -18,3 +21,7 @@ if __name__ == '__main__':
     print(df.head())
     print(df['sample_rate'])
     print(sig_headers)
+
+    new_signal = read_txt('Data/S00R01.txt')
+    print(new_signal)
+    print(type(new_signal))
