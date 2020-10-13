@@ -8,7 +8,14 @@ def read_edf(edf_file):
     return signal, signal_headers
 
 def read_txt(txt_file):
-    signal = np.loadtxt(txt_file, delimiter=',')
+    file = open(txt_file, mode='r')
+    str = file.read()
+    file.close()
+    str = str.translate({ord('\n'): None , ord(' '): None})
+    signal_str = str.split(sep=',', maxsplit=-1)
+    signal = np.zeros(len(signal_str))
+    for index in enumerate(signal_str):
+        signal[index[0]] = np.double(signal_str[index[0]])
     return signal
 
 
