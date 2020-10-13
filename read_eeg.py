@@ -17,7 +17,11 @@ def read_txt(txt_file):
     for index in enumerate(signal_str):
         signal[index[0]] = np.double(signal_str[index[0]])
     return signal
-
+# TODO :
+#       Addind Support for csv file
+#       Addind Support for mat file
+#       Addind Support for pickle file
+#       Addind Support for hdf5 file
 
 if __name__ == '__main__':
     sigs, sig_headers = read_edf('Data/S001R01.edf')
