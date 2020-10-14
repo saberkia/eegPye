@@ -5,6 +5,7 @@ import scipy.io
 import pickle
 import h5py
 
+
 def read_edf(edf_file):
     signal, signal_headers, header = highlevel.read_edf(edf_file)
     return signal, signal_headers
@@ -36,12 +37,6 @@ def read_pickle(pickle_file):
 def read_hdf5(hdf5_file):
     signal = h5py.File(hdf5_file, 'r')
     return signal
-
-# TODO :
-#       Adding Support for csv file     : done
-#       Adding Support for mat file     : done
-#       Adding Support for pickle file  : done
-#       Adding Support for hdf5 file    : done
 
 
 if __name__ == '__main__':
