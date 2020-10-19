@@ -48,7 +48,6 @@ if __name__ == '__main__':
     print(df.head())
     print(df['sample_rate'])
     print(sig_headers)
-
     new_signal = read_txt('Data/S00R01.txt')
     print(new_signal)
     print(type(new_signal))
